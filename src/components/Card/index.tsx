@@ -1,16 +1,17 @@
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 interface CardProps {
   thumbnail: string;
   title: string;
-  level: string;
+  difficulty: string;
   slug: string;
 }
 
 function Card({
   thumbnail,
   title,
-  level,
+  difficulty,
   slug,
 }: CardProps) {
   return (
@@ -20,9 +21,9 @@ function Card({
         <h2 className="card-title">{title}</h2>
         <p className="card-desc">
           Difficulté :
-          {level}
+          {difficulty}
         </p>
-        <a href={`/recipe/${slug}`} className="card-link">Voir la recette</a>
+        <Link to={`/recipe/${slug}`} className="card-link">Voir la recette</Link>
       </div>
     </article>
   );

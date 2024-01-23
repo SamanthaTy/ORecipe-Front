@@ -1,4 +1,3 @@
-import Home from '../Home';
 import Menu from '../Menu';
 // import Recipe from '../Recipe';
 // import Error from '../Error';
@@ -6,6 +5,7 @@ import Menu from '../Menu';
 import Loading from './Loading';
 
 import './App.scss';
+import { Outlet } from 'react-router-dom';
 
 interface AppProps {
   loading?: boolean;
@@ -18,9 +18,7 @@ function App({ loading }: AppProps) {
   return (
     <div className="app">
       <Menu />
-      <Home />
-      {/* <Recipe /> */}
-      {/* <Error /> */}
+      <Outlet />
     </div>
   );
 }

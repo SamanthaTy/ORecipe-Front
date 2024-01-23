@@ -1,98 +1,30 @@
-# oRecipes
+# React + TypeScript + Vite
 
-_Pour démarrer ce projet, récupère la config du react-modele puis analyse les composants fournis dans `/src`._  
-_Tu devras installer les dépendances `@reduxjs/toolkit`, `react-redux`et également `react-router-dom`_  
-_Tu auras également besoin du dépôt de l'api des recettes pour l'étape 3._
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Salut _[insère ton nom ici]_, il paraît que t'es le nouveau.
+Currently, two official plugins are available:
 
-Bienvenue chez oRecipes, on lance bientôt notre nouvelle application de recettes et on a fait appel à toi pour renforcer notre équipe.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Tu interviendras sur notre application qui utilise React, Redux et React Router :tada:
+## Expanding the ESLint configuration
 
-## Étape 1 : On analyse et on répare
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-Pour poser les bases du nouveau projet on a fait appel à un cador de la boîte. Mais là, il est occupé ailleurs.
+- Configure the top-level `parserOptions` property like this:
 
-Je te transfère ses explications, vois ce que tu peux faire, moi j'y connais rien.
-
-```text
-Fwd: Objet: Développement d'oRecipes
-
-La base est posée mais j'ai dû m'arrêter en cours de route, 
-il reste quelques soucis à régler avant de voir la suite.
-
-- J'ai cassé quelque chose à la dernière minute, 
-ça doit pas être grand chose tout marchait bien jusque là, faut qu'on regarde.
-
-- L'affichage du logo est cassé, j'ai pas eu le temps de voir pourquoi.
-
-- La difficulté ne s'affiche pas sur l'accueil en dessous du titre de chaque recette.
-
-Cordialement
-Vincent F.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
 ```
 
-J'espère que ça te suffira, Vincent est pas trop dispo. Tiens voilà la maquette graphique pour que tu vois ce que ça doit donner.
-
-!['résultat'](./__docs/resultat.png)
-
-## Étape 2 : Router
-
-Tu as tout réparé ?
-
-Bon pour la suite je te transfère un email de Vincent
-
-```text
-Fwd: Re: Objet: Développement d'oRecipes
-
-Pour briefer le nouveau sur le projet. 
-Tu peux lui dire que j'ai préparé tout le nécessaire pour la page d'une Recette en plus de l'accueil.
-Il a du voir le code commenté dans le composant racine.
-
-Il faut qu'il mette en place le routeur pour afficher la bonne vue en fonction de l'url, j'espère qu'il connait les hooks de react-router. 
-Il faudra sûrement adapter les liens.
-
-S'il a le temps de gérer la vue d'erreur ça serait bien aussi.
-
-Cordialement
-Vincent F.
-```
-
-Je te mets l'animation du premier prototype pour que tu vois
-!['résultat'](./__docs/resultat.gif)
-
-## Étape 3 : Store
-
-Le routeur est en place ?
-
-Vincent a pu mettre en place l'api de développement pendant que tu t'occupais de l'interface.
-
-Je te transfère son email
-
-```text
-Fwd: Re: Objet: Développement d'oRecipes
-
-Salut le nouveau,
-
-Je suis sûr que le boss va encore te transférer mon email sans même le lire.
-
-Le store créé avec Redux est en place sur le projet. 
-
-Tu peux arrêter d'utiliser les data bidons de `src/data.js` et récupérer l'api de développement pour le projet oRecipes.
-Mets en place la récupération des données via l'api dans un middleware de redux thunk.
-Tu auras la liste sur le endpoint `/recipes` en GET
-
-Cordialement
-Vincent F.
-```
-
-## Bonus
-
-J'ai regardé ton travail et j'ai une remarque. Vincent n'a pas répondu à mon email.
-
-Peux-tu t'en occuper directement ?
-
-J'ai remarqué que lorsqu'on scrolle dans la page, par exemple sur une recette. Si ensuite on change de recette, on ne revient pas en haut de la page.
-
-J'aimerai qu'à chaque changement de page on remette le défilement de la page en haut.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
