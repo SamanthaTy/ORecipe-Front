@@ -8,7 +8,7 @@
   width: v.$menuWidth;
   padding: v.$halfGutter 0;
   background-color: color.scale(v.$color, $lightness: -80%);
-  box-shadow: inset -20px 0 20px -20px rgba(0,0,0,.75);
+  box-shadow: inset -20px 0 20px -20px rgba(0, 0, 0, .75);
   height: 100vh;
 
   @media (max-width: v.$small) {
@@ -20,13 +20,13 @@
     display: block;
     padding: v.$halfGutter v.$gutter;
     transition: color .2s, box-shadow .4s;
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, .75);
 
-    &:hover:not(&--active) {
+    &:hover:not(&.active) {
       color: white;
     }
 
-    &--active {
+    &.active {
       color: v.$color;
       box-shadow: inset -3px 0 0 v.$color;
     }
