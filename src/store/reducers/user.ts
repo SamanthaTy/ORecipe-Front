@@ -29,9 +29,6 @@ export const logout = createAction("LOGOUT");
 export const tokenCheck = createAction("TOKEN_CHECK");
 
 const userReducer = createReducer(initialState, (builder) => {
-  /* builder.addCase(login.pending,(state,action)=>{
-
-  }) */
   builder.addCase(login.fulfilled, (state, action) => {
     state.logged = action.payload.logged;
     state.pseudo = action.payload.pseudo;
