@@ -16,11 +16,11 @@
   &-content {
     position: absolute;
     left: 0;
-    width: 100%;
+    right: 0;
     bottom: v.$gutter;
     padding: v.$gutter;
     text-align: center;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
   }
 
   &-title {
